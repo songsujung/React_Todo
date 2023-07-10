@@ -26,7 +26,6 @@ const Todo2Input = ({changeView}) => {
             <button onClick={() => {
             postTodo(todo).then(newTodo => {alert("NEW TODO" + newTodo.tno)
             changeView("list")})
-
             }}>Register</button>
         </div>
      );

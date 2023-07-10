@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTodo, putTodo, removeTodo } from "../../api/TodoAPI";
 
+// Read페이지에서 삭제, 수정 진행
 const initState = {
     tno:0,
     title:''
@@ -12,12 +13,15 @@ const Todo2Read = ({target, changeView}) => {
 
     const [refresh, setRefresh] = useState(false)
 
+    // target값이 변경되면 useEffect할 것이다.
     useEffect(() => {
         
+        //getTodo해서 가져온 data값을 setTodo
         getTodo(target).then(data => setTodo(data))
 
-    },[target, refresh])
+    },[target, refresh])// 의존주입
 
+    // 삭제
     const handleClickDel = async() => {
 
         const {result} = await removeTodo(target)
@@ -31,6 +35,7 @@ const Todo2Read = ({target, changeView}) => {
 
     }
 
+    // 수정
     const handleClickMod = async () => {
         const {result} = await putTodo(todo)
 

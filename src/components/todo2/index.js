@@ -9,7 +9,8 @@ const Todo2 = () => {
 
     const changeView = (value, tno) => {
         setCmd(value)
-
+        
+        // tno값이 존재한다면 tno값 세팅
         if(tno){
             setTarget(tno)
         }
@@ -29,11 +30,11 @@ const Todo2 = () => {
     return ( 
         <>
         <div className="w-full h-24 bg-blue-500 flex justify-center">
-        <div className="border-2 text-red w-32" onClick={() => changeView("list")}>LIST</div>
-        <div className="border-2 text-red w-32" onClick={() => changeView("input")}>INPUT</div>
+            <div className="border-2 text-red w-32" onClick={() => changeView("list")}>LIST</div>
+            <div className="border-2 text-red w-32" onClick={() => changeView("input")}>INPUT</div>
         </div>
         <div>
-        {getView()}
+            {getView()}
         </div>
         </>
 
